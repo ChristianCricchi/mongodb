@@ -22,13 +22,15 @@ conn = mongo_connect(MONGO_URI)
 
 coll = conn[DATABASE][COLLECTION]
 
+"""__pycache__/
 coll.update_many(
     {"nationality": "american"},
     {"$set": {"hair_color": "maroon"}}
 )
 documents = coll.find({"nationality": "american"})
+"""
 
-#documents = coll.find()
+documents = coll.find()
 
 for doc in documents:
     print(doc)
